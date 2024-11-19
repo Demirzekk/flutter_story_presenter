@@ -485,22 +485,22 @@ class _FlutterStoryViewState extends State<FlutterStoryView>
             ),
           ),
         },
-        if (currentItem.storyItemType.isWeb) ...{
-          Positioned.fill(
-            child: WebStoryView(
-              storyItem: currentItem,
-              key: ValueKey('$currentIndex'),
-              onWebViewLoaded: (controller, loaded) {
-                isCurrentItemLoaded = loaded;
-                if (loaded) {
-                  _startStoryCountdown();
-                }
-                currentItem.webConfig?.onWebViewLoaded
-                    ?.call(controller, loaded);
-              },
-            ),
-          ),
-        },
+        // if (currentItem.storyItemType.isWeb) ...{
+        //   Positioned.fill(
+        //     child: WebStoryView(
+        //       storyItem: currentItem,
+        //       key: ValueKey('$currentIndex'),
+        //       onWebViewLoaded: (controller, loaded) {
+        //         isCurrentItemLoaded = loaded;
+        //         if (loaded) {
+        //           _startStoryCountdown();
+        //         }
+        //         currentItem.webConfig?.onWebViewLoaded
+        //             ?.call(controller, loaded);
+        //       },
+        //     ),
+        //   ),
+        // },
         if (currentItem.storyItemType.isText) ...{
           Positioned.fill(
             key: UniqueKey(),
